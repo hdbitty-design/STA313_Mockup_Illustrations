@@ -1,0 +1,105 @@
+{
+  "panel1": {
+    "floatingNote": {
+      "bottom": 50,
+      "right": 63
+    },
+    "worldAvgLabel": {
+      "y": -10
+    },
+    "annotationHighest": {
+      "textX": 44.96131823341398,
+      "textY": 22.001567840576172
+    },
+    "annotationLowest": {
+      "textX": 71.42728234421531,
+      "textY": -27.425956260078344
+    }
+  },
+  "panel2": {
+    "floatingNote": {
+      "bottom": 55,
+      "right": 615
+    },
+    "regressionEquation": {
+      "x": 167.0047378540039,
+      "y": 11.999759078025818
+    },
+    "rSquared": {
+      "x": 182.00518417358398,
+      "y": 32.99984931945801
+    },
+    "sizeLegend": {
+      "x": 730.0021362304688,
+      "y": 19.993499755859375
+    },
+    "sizeLegendTitle": {
+      "x": 682.0006713867188,
+      "y": 16.99342632293701
+    },
+    "sizeLegendItem0": {
+      "x": 692.0008544921875,
+      "y": 48.99408721923828
+    },
+    "sizeLegendItem1": {
+      "x": 693.0010375976562,
+      "y": 82.99431610107422
+    },
+    "sizeLegendItem2": {
+      "x": 693.0009765625,
+      "y": 128.99493408203125
+    }
+  },
+  "panel3": {
+    "floatingNote": {
+      "bottom": 60,
+      "right": 75
+    },
+    "efficiencyLabel": {
+      "x": 226.99420166015625,
+      "y": 161.00335311889648
+    },
+    "sizeLegend": {
+      "x": 19.00027084350586,
+      "y": 61.994773864746094
+    },
+    "sizeLegendTitle": {
+      "x": 12.000064849853516,
+      "y": 67.99555969238281
+    },
+    "sizeLegendItem0": {
+      "x": 19.00027084350586,
+      "y": 102.99600219726562
+    },
+    "sizeLegendItem1": {
+      "x": 19.000276565551758,
+      "y": 145.99618530273438
+    },
+    "sizeLegendItem2": {
+      "x": 19.000272750854492,
+      "y": 182.99620056152344
+    }
+  },
+  "panel4": {
+    "floatingNote": {
+      "bottom": 166,
+      "right": 115
+    },
+    "worldAvgLabel": {
+      "y": -10
+    },
+    "incomeLegend": {
+      "x": 634.9998779296875,
+      "y": 108.00325393676758
+    },
+    "miniCharts": {
+      "bottom": 63,
+      "right": 17
+    },
+    "annotationLargest": {},
+    "annotationParity": {
+      "textX": 58.576629627830584,
+      "textY": -20.425727855079572
+    }
+  }
+}

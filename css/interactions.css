@@ -1,0 +1,443 @@
+/* Interaction-specific Styles */
+
+/* Hover Effects */
+.hoverable {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hoverable:hover {
+    transform: scale(1.05);
+}
+
+/* Selection State */
+.selectable {
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.selectable.selected {
+    stroke: #2b2d42;
+    stroke-width: 3;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Linked Highlighting Across Panels */
+.linked-highlight {
+    animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+/* Focus State for Accessibility */
+.focusable:focus {
+    outline: 3px solid #4361ee;
+    outline-offset: 2px;
+}
+
+/* Transition States */
+.entering {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.exiting {
+    animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* Interaction Hints */
+.interaction-hint {
+    position: absolute;
+    background: rgba(67, 97, 238, 0.9);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 100;
+}
+
+.interaction-hint.show {
+    opacity: 1;
+}
+
+.interaction-hint::before {
+    content: '💡';
+    margin-right: 6px;
+}
+
+/* Numbered Step Indicators */
+.step-indicator {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background: #4361ee;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 2px 6px rgba(67, 97, 238, 0.4);
+    z-index: 50;
+}
+
+/* Filter Controls */
+.filter-control {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    padding: 6px 12px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.filter-button:hover {
+    background: #e9ecef;
+    border-color: #adb5bd;
+}
+
+.filter-button.active {
+    background: #4361ee;
+    color: white;
+    border-color: #4361ee;
+}
+
+.filter-button.active:hover {
+    background: #3651d4;
+}
+
+/* Compare Mode Toggle */
+.compare-toggle {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    border: 2px solid #4361ee;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4361ee;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.compare-toggle:hover {
+    background: #4361ee;
+    color: white;
+}
+
+.compare-toggle.active {
+    background: #4361ee;
+    color: white;
+}
+
+/* Details Panel Slide-in */
+.details-panel {
+    position: fixed;
+    right: -400px;
+    top: 0;
+    width: 400px;
+    height: 100%;
+    background: white;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    padding: 30px;
+    overflow-y: auto;
+}
+
+.details-panel.open {
+    right: 0;
+}
+
+.details-panel-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #e9ecef;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.details-panel-close:hover {
+    background: #dee2e6;
+    transform: rotate(90deg);
+}
+
+/* Comparison Panel */
+.comparison-panel {
+    position: fixed;
+    right: -450px;
+    top: 120px;
+    width: 450px;
+    max-height: 600px;
+    background: white;
+    box-shadow: -4px 4px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px 0 0 8px;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1001;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.comparison-panel.visible {
+    right: 0;
+}
+
+.comparison-header {
+    background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+    color: white;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.comparison-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.comparison-header button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.comparison-header button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.comparison-header .close-comparison {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+    border-radius: 50%;
+}
+
+.comparison-content {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.comparison-empty {
+    color: #6c757d;
+    text-align: center;
+    padding: 40px 20px;
+    font-style: italic;
+}
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.comparison-table th {
+    background: #f8f9fa;
+    padding: 10px 8px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #dee2e6;
+    position: sticky;
+    top: 0;
+}
+
+.comparison-table th:first-child {
+    text-align: left;
+    color: #495057;
+}
+
+.comparison-table td {
+    padding: 10px 8px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.comparison-table td.metric-label {
+    font-weight: 600;
+    color: #495057;
+    background: #f8f9fa;
+}
+
+.comparison-table tbody tr:hover {
+    background: #f1f3f5;
+}
+
+/* Selected region visual indicator */
+.selected-for-comparison {
+    filter: brightness(1.1);
+    animation: pulse-selection 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-selection {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.85;
+    }
+}
+
+/* Zoom Controls */
+.zoom-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.zoom-button {
+    width: 32px;
+    height: 32px;
+    background: white;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}
+
+.zoom-button:hover {
+    background: #f8f9fa;
+    border-color: #adb5bd;
+}
+
+/* Loading State */
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f8f9fa;
+    border-top-color: #4361ee;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Crosshair for Comparison */
+.crosshair {
+    stroke: #495057;
+    stroke-width: 1;
+    stroke-dasharray: 4, 3;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.crosshair.visible {
+    opacity: 0.6;
+}
+
+/* Highlight Box */
+.highlight-box {
+    fill: none;
+    stroke: #ffc107;
+    stroke-width: 2;
+    stroke-dasharray: 5, 5;
+    animation: dash 1s linear infinite;
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: -10;
+    }
+}
+
+/* Screen Reader Only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Print Styles */
+@media print {
+    .controls,
+    .compare-toggle,
+    .zoom-controls,
+    .details-panel {
+        display: none;
+    }
+}

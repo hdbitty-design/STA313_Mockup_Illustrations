@@ -1,0 +1,329 @@
+/* Dashboard Main Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    color: #2b2d42;
+    overflow-x: hidden;
+}
+
+/* Main Dashboard Container - 16:9 Ratio */
+.dashboard {
+    width: 1920px;
+    height: auto;
+    min-height: 900px;
+    background: white;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.dashboard-header {
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dashboard-title {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+}
+
+.dashboard-subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Panel Grid - 2x2 Layout */
+.panel-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2px;
+    background: #e9ecef;
+    min-height: 820px;
+}
+
+/* Individual Panels */
+.panel {
+    background: white;
+    padding: 15px 30px 20px 30px;
+    position: relative;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    flex-shrink: 0;
+}
+
+.panel-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2b2d42;
+    margin-bottom: 4px;
+}
+
+.panel-question {
+    font-size: 13px;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.panel-content {
+    position: relative;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+/* SVG Container */
+svg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Axis Styles */
+.axis text {
+    font-size: 11px;
+    fill: #495057;
+}
+
+.axis line,
+.axis path {
+    stroke: #dee2e6;
+    stroke-width: 1;
+}
+
+.axis-label {
+    font-size: 12px;
+    font-weight: 600;
+    fill: #2b2d42;
+}
+
+/* Grid Lines */
+.grid line {
+    stroke: #f1f3f5;
+    stroke-opacity: 0.7;
+    stroke-width: 1;
+}
+
+.grid path {
+    stroke-width: 0;
+}
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 1000;
+    max-width: 280px;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.tooltip.visible {
+    opacity: 1;
+}
+
+.tooltip-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 6px;
+}
+
+.tooltip-row {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+.tooltip-label {
+    opacity: 0.8;
+    margin-right: 12px;
+}
+
+.tooltip-value {
+    font-weight: 600;
+}
+
+/* Annotation Styles */
+.annotation {
+    font-size: 12px;
+    fill: #495057;
+}
+
+.annotation-line {
+    stroke: #adb5bd;
+    stroke-width: 1.5;
+    stroke-dasharray: 4, 3;
+}
+
+.annotation-callout {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 11px;
+    color: #856404;
+    max-width: 200px;
+}
+
+/* Legend */
+.legend {
+    font-size: 11px;
+}
+
+.legend-item {
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.legend-item:hover {
+    opacity: 0.7;
+}
+
+.legend-rect {
+    stroke: white;
+    stroke-width: 1;
+}
+
+.legend-text {
+    fill: #2b2d42;
+    font-size: 11px;
+}
+
+/* Interactive Elements */
+.bar,
+.circle,
+.region-path {
+    transition: opacity 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+.bar:hover,
+.circle:hover,
+.region-path:hover {
+    opacity: 0.8;
+    filter: brightness(1.1);
+}
+
+.bar.highlighted,
+.circle.highlighted,
+.region-path.highlighted {
+    stroke: #2b2d42;
+    stroke-width: 3;
+}
+
+.bar.dimmed,
+.circle.dimmed,
+.region-path.dimmed {
+    opacity: 0.2;
+}
+
+/* Regression Line */
+.regression-line {
+    stroke: #e63946;
+    stroke-width: 2.5;
+    fill: none;
+    stroke-dasharray: 6, 4;
+}
+
+.confidence-band {
+    fill: #e63946;
+    opacity: 0.1;
+}
+
+/* Efficiency Frontier */
+.efficiency-frontier {
+    stroke: #06a77d;
+    stroke-width: 3;
+    fill: none;
+}
+
+.efficient-region {
+    stroke: #06a77d;
+    stroke-width: 2.5;
+}
+
+.inefficient-region {
+    stroke: #e63946;
+    stroke-width: 1.5;
+    stroke-dasharray: 3, 3;
+}
+
+/* Controls */
+.controls {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #dee2e6;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.control-label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Floating Notes */
+.floating-note {
+    position: absolute;
+    background: #e7f3ff;
+    border-left: 4px solid #4361ee;
+    padding: 10px 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #004085;
+    max-width: 220px;
+    line-height: 1.5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.floating-note.insight {
+    background: #d4edda;
+    border-left-color: #28a745;
+    color: #155724;
+}
+
+.floating-note.warning {
+    background: #fff3cd;
+    border-left-color: #ffc107;
+    color: #856404;
+}
+
+.floating-note strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 12px;
+}

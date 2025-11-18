@@ -1,0 +1,129 @@
+{
+  "regions": [
+    {
+      "id": "ESA",
+      "name": "Eastern and Southern Africa",
+      "learningPoverty": 89.2,
+      "outOfSchool": 18.5,
+      "completionRate": 65.3,
+      "spendingPerPupil": 245,
+      "spendingGDP": 3.8,
+      "genderGap": 8.2,
+      "incomeLevel": "Low",
+      "color": "#e63946"
+    },
+    {
+      "id": "WCA",
+      "name": "West and Central Africa",
+      "learningPoverty": 86.7,
+      "outOfSchool": 20.3,
+      "completionRate": 62.1,
+      "spendingPerPupil": 198,
+      "spendingGDP": 3.2,
+      "genderGap": 12.5,
+      "incomeLevel": "Low",
+      "color": "#f77f00"
+    },
+    {
+      "id": "SA",
+      "name": "South Asia",
+      "learningPoverty": 78.3,
+      "outOfSchool": 12.8,
+      "completionRate": 71.5,
+      "spendingPerPupil": 312,
+      "spendingGDP": 3.5,
+      "genderGap": 6.8,
+      "incomeLevel": "Lower-middle",
+      "color": "#fcbf49"
+    },
+    {
+      "id": "MENA",
+      "name": "Middle East and North Africa",
+      "learningPoverty": 62.5,
+      "outOfSchool": 8.9,
+      "completionRate": 78.2,
+      "spendingPerPupil": 892,
+      "spendingGDP": 4.2,
+      "genderGap": 4.3,
+      "incomeLevel": "Upper-middle",
+      "color": "#06a77d"
+    },
+    {
+      "id": "LAC",
+      "name": "Latin America and the Caribbean",
+      "learningPoverty": 51.8,
+      "outOfSchool": 5.2,
+      "completionRate": 82.7,
+      "spendingPerPupil": 1245,
+      "spendingGDP": 4.8,
+      "genderGap": 2.1,
+      "incomeLevel": "Upper-middle",
+      "color": "#4361ee"
+    },
+    {
+      "id": "EAP",
+      "name": "East Asia and Pacific",
+      "learningPoverty": 38.9,
+      "outOfSchool": 3.8,
+      "completionRate": 88.5,
+      "spendingPerPupil": 1567,
+      "spendingGDP": 4.5,
+      "genderGap": 1.5,
+      "incomeLevel": "Upper-middle",
+      "color": "#7209b7"
+    },
+    {
+      "id": "EECA",
+      "name": "Eastern Europe and Central Asia",
+      "learningPoverty": 24.1,
+      "outOfSchool": 2.1,
+      "completionRate": 94.2,
+      "spendingPerPupil": 2134,
+      "spendingGDP": 5.1,
+      "genderGap": 0.8,
+      "incomeLevel": "Upper-middle",
+      "color": "#560bad"
+    },
+    {
+      "id": "NA",
+      "name": "North America",
+      "learningPoverty": 9.8,
+      "outOfSchool": 1.2,
+      "completionRate": 97.5,
+      "spendingPerPupil": 11842,
+      "spendingGDP": 5.8,
+      "genderGap": 0.3,
+      "incomeLevel": "High",
+      "color": "#b5179e"
+    },
+    {
+      "id": "WE",
+      "name": "Western Europe",
+      "learningPoverty": 7.2,
+      "outOfSchool": 0.8,
+      "completionRate": 98.3,
+      "spendingPerPupil": 9876,
+      "spendingGDP": 5.2,
+      "genderGap": 0.2,
+      "incomeLevel": "High",
+      "color": "#3a86ff"
+    },
+    {
+      "id": "WORLD",
+      "name": "World Average",
+      "learningPoverty": 52.7,
+      "outOfSchool": 8.2,
+      "completionRate": 79.8,
+      "spendingPerPupil": 3142,
+      "spendingGDP": 4.4,
+      "genderGap": 4.1,
+      "incomeLevel": "Mixed",
+      "color": "#8d99ae"
+    }
+  ],
+  "metadata": {
+    "source": "Mock data for STA313 Project - Education Spending Efficiency",
+    "year": "2024",
+    "notes": "Learning Poverty: % of 10-year-olds unable to read simple text with comprehension. Out-of-school: % of primary-age children not enrolled. Completion: % completing primary education. Spending per pupil in USD. Gender gap: percentage point difference (male - female completion)."
+  }
+}

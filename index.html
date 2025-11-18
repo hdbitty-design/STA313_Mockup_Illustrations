@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive visualization dashboard analyzing childhood education outcomes and public spending efficiency across global regions">
+    <meta name="keywords" content="education, spending efficiency, learning poverty, data visualization, STA313">
+    <meta name="author" content="Group 2U - STA313 Project">
+    <title>Education Spending Efficiency Dashboard | STA313 Project</title>
+
+    <!-- D3.js Library -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/interactions.css">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="data/mock-education-data.json" as="fetch" crossorigin>
+</head>
+<body>
+    <!-- Main Dashboard Container (16:9 ratio: 1920x1080) -->
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <h1 class="dashboard-title">Investing in the Future: Childhood Education & Public Spending Efficiency</h1>
+            <p class="dashboard-subtitle">Interactive analysis of learning outcomes, access, and spending efficiency across global regions | STA313 Project - Group 2U</p>
+        </header>
+
+        <!-- Panel Grid (2x2 layout) -->
+        <div class="panel-grid">
+            <!-- Panel 1: Learning Poverty by Region -->
+            <div id="panel1" class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Q1: Learning Poverty by Region</h2>
+                    <p class="panel-question">Where is learning poverty highest and lowest across regions?</p>
+                </div>
+                <div class="panel-content"></div>
+            </div>
+
+            <!-- Panel 2: Out-of-School vs Completion -->
+            <div id="panel2" class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Q2: Access vs Completion</h2>
+                    <p class="panel-question">Do higher out-of-school rates coincide with lower completion? How strong is the relationship?</p>
+                </div>
+                <div class="panel-content"></div>
+            </div>
+
+            <!-- Panel 3: Spending Efficiency -->
+            <div id="panel3" class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Q3: Spending Efficiency Analysis</h2>
+                    <p class="panel-question">If two regions spend similarly, which achieves more learning (more efficient use of spending)?</p>
+                </div>
+                <div class="panel-content"></div>
+            </div>
+
+            <!-- Panel 4: Equity Analysis -->
+            <div id="panel4" class="panel">
+                <div class="panel-header">
+                    <h2 class="panel-title">Q4: Equity Analysis - Gender Gaps</h2>
+                    <p class="panel-question">What other factors affect educational opportunity (e.g., gender gaps)?</p>
+                </div>
+                <div class="panel-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Help Hint (appears on first load) -->
+    <div class="interaction-hint show" style="top: 120px; right: 20px;">
+        Press <strong>H</strong> for help | <strong>D</strong> drag mode | <strong>S</strong> save
+    </div>
+
+    <!-- Step Indicators for Documentation -->
+    <div class="step-indicator" style="top: 140px; left: 40px;">1</div>
+    <div class="step-indicator" style="top: 140px; right: 40px;">2</div>
+    <div class="step-indicator" style="bottom: 40px; left: 40px;">3</div>
+    <div class="step-indicator" style="bottom: 40px; right: 40px;">4</div>
+
+    <!-- Screen Reader Instructions -->
+    <div class="sr-only">
+        <h2>Dashboard Overview</h2>
+        <p>This interactive dashboard presents four analytical views of childhood education outcomes and public spending efficiency:</p>
+        <ol>
+            <li>Panel 1 (top-left): Learning poverty ranking by region</li>
+            <li>Panel 2 (top-right): Relationship between out-of-school rates and completion</li>
+            <li>Panel 3 (bottom-left): Spending efficiency analysis with frontier visualization</li>
+            <li>Panel 4 (bottom-right): Equity analysis showing gender gaps by income level</li>
+        </ol>
+        <p>All panels support linked highlighting - selecting a region in one panel highlights it across all views.</p>
+        <p>Press H for detailed help and keyboard shortcuts.</p>
+    </div>
+
+    <!-- JavaScript Modules -->
+    <script src="js/utils.js"></script>
+    <script src="js/drag-positions.js"></script>
+    <script src="js/panel1-learning-poverty.js"></script>
+    <script src="js/panel2-access-completion.js"></script>
+    <script src="js/panel3-spending-efficiency.js"></script>
+    <script src="js/panel4-equity-analysis.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Hide help hint after 5 seconds -->
+    <script>
+        setTimeout(() => {
+            const hint = document.querySelector('.interaction-hint');
+            if (hint) {
+                hint.classList.remove('show');
+                setTimeout(() => hint.remove(), 300);
+            }
+        }, 5000);
+    </script>
+
+    <!-- Analytics (optional - for tracking dashboard usage) -->
+    <script>
+        // Log dashboard initialization
+        console.log('%c🎓 Education Spending Efficiency Dashboard', 'font-size: 20px; font-weight: bold; color: #667eea;');
+        console.log('%cSTA313 Project - Group 2U', 'font-size: 14px; color: #764ba2;');
+        console.log('%cTeam: Zechen Yu, Bohao Zhao, Jialu Fu, Qi Li, Fan Peng', 'font-size: 12px; color: #6c757d;');
+        console.log('%cPress H for help', 'font-size: 12px; font-weight: bold; color: #06a77d;');
+    </script>
+</body>
+</html>
