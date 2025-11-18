@@ -2,7 +2,7 @@
 // Question: What other factors affect opportunity (e.g., gender gaps)?
 
 const createEquityAnalysisPanel = (data, container) => {
-    const margin = { top: 20, right: 120, bottom: 45, left: 180 };
+    const margin = { top: 20, right: 120, bottom: 45, left: 220 };
     const width = 920 - margin.left - margin.right;
     const height = 380 - margin.top - margin.bottom;
 

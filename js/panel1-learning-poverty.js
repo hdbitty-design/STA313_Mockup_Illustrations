@@ -2,7 +2,7 @@
 // Question: In which regions is learning poverty highest/lowest?
 
 const createLearningPovertyPanel = (data, container) => {
-    const margin = { top: 20, right: 140, bottom: 35, left: 180 };
+    const margin = { top: 20, right: 140, bottom: 35, left: 220 };
     const width = 920 - margin.left - margin.right;
     const height = 380 - margin.top - margin.bottom;
 

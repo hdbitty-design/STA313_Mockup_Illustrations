@@ -233,14 +233,16 @@ svg {
 
 .bar.highlighted,
 .circle.highlighted,
-.region-path.highlighted {
+.region-path.highlighted,
+.equity-bar.highlighted {
     stroke: #2b2d42;
     stroke-width: 3;
 }
 
 .bar.dimmed,
 .circle.dimmed,
-.region-path.dimmed {
+.region-path.dimmed,
+.equity-bar.dimmed {
     opacity: 0.2;
 }
 
